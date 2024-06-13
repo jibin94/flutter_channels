@@ -6,7 +6,6 @@ Here’s an overview of the differences between MethodChannel and EventChannel:<
    Dart-to-Platform: In Dart, you use the invokeMethod method on the MethodChannel to call a platform-specific method. On the platform side, you handle the method invocation and return the result asynchronously.
    Platform-to-Dart: After the platform-specific method completes execution, it can use the Result object to send a result or error back to the Dart side.
    
-    // In Dart code
    `final platformChannel = MethodChannel('channel_name');
     final result = await platformChannel.invokeMethod('method_name', arguments);`
 
@@ -14,7 +13,6 @@ Here’s an overview of the differences between MethodChannel and EventChannel:<
    Platform-to-Dart: On the platform side, you set up a stream of events or data and send them using the EventSink.
    Dart-to-Platform: In Dart, you listen to the stream provided by the EventChannel to receive the events or data sent from the platform.
     
-    // In Dart code
    `final eventChannel = EventChannel('channel_name');
     final eventStream = eventChannel.receiveBroadcastStream();`<br />
 
